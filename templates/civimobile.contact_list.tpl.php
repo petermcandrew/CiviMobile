@@ -1,4 +1,4 @@
-<? require('civimobile.header.php'); ?>
+<?php require('civimobile.header.php'); ?>
 
 
 <div data-role="page" data-theme="b" id="jqm-contacts"> 
@@ -46,8 +46,9 @@
     <a href="#" id="save-contact" data-role="button">Save Contact</a> 
     </div>
     
-	<script>
-jQuery(document).ready(function($) {
+<script>
+
+$( function(){
     
 <?php
    $results=json_encode(civicrm_api("Contact","get", array ('sequential' =>'1', 'version'=>3, 'return' =>'display_name,phone')));	
