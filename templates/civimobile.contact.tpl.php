@@ -22,9 +22,6 @@
                                     'version'=>3, 
                                     'contact_id' => $contact_id) 
                                     );
-    ?>
-
-<?php 
 include('civimobile.header.php');
 ?>
 <div data-role="page" data-theme="b" id="jqm-contacts">
