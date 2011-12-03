@@ -26,7 +26,7 @@ $(function(){
         var urlVars = getUrlVars();
         
         if (urlVars.length >0){
-            $.mobile.pageLoading();
+            //$.mobile.pageLoading();
              
              
              // On Event Participants Listing page
@@ -51,7 +51,7 @@ $(function(){
                      participantsList.append(participant);    
                      });
                    participantsList.listview().listview('refresh');
-                   $.mobile.pageLoading( true );
+                   //$.mobile.pageLoading( true );
                    },
                  });
             }
@@ -65,13 +65,13 @@ $(function(){
                 $().crmAPI ('participant','get',{id:participant_id, 'return': 'display_name,participant_status_id,contact_id'}, {
                   ajaxURL: crmajaxURL,
                   callBack: function(data,settings){
-                  $.mobile.pageLoading();
+                  //$.mobile.pageLoading();
                   if (data.is_error == 1) {
-                    $.mobile.pageLoading( true );
+                    //$.mobile.pageLoading( true );
                     alert('Whoops - flaky internet! Try again...');
                   } else {
                   $.each(data.values, function(key, value) {
-                     $.mobile.pageLoading( true );
+                     //$.mobile.pageLoading( true );
                      $('#jqm-participant_status .ui-title').html(value.display_name);
                      $('.status-'+value.participant_status_id).attr('data-theme','b').toggleClass('ui-btn-up-c').toggleClass('ui-btn-up-b');       
                      $('#contact-record').attr('href','#civimobile/contact/'+value.contact_id);
@@ -95,16 +95,16 @@ $(function(){
 
         
         function setParticipantStatus(participant_id, status) {
-            $.mobile.pageLoading();
+            //$.mobile.pageLoading();
             $().crmAPI ('participant','update',{id:participant_id,status_id:status}, 
                {
                   ajaxURL: crmajaxURL,
                   callBack: function(result,settings){
                   if (result.is_error == 1) {
-                    $.mobile.pageLoading( true );
+                    //$.mobile.pageLoading( true );
                     alert('Whoops - flaky internet! Try again...');
                   } else {
-                    $.mobile.pageLoading( true );
+                    //$.mobile.pageLoading( true );
                     $('.ui-btn-up-b').attr('data-theme','c').removeClass('ui-btn-up-b').addClass('ui-btn-up-c');
                     $('.ui-btn-hover-c').attr('data-theme','c').removeClass('ui-btn-hover-b').addClass('ui-btn-hover-c');
                     $('.status-'+result.status_id).attr('data-theme','b').removeClass('ui-btn-up-c').removeClass('ui-btn-hover-c').addClass('ui-btn-up-b');
@@ -123,5 +123,4 @@ $(function(){
 			}
 			return vars;
 		}
-
 
