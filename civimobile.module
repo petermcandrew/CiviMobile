@@ -109,8 +109,13 @@ function _civimobile_vars_setup() {
   //
     civicrm_initialize();
     require_once 'api/api.php';
-    
-    $civimobile_vars['language'] = $GLOBALS['locale'];
+
+    if ( CRM_Utils_Array::value( 'locale', $GLOBALS ) ) { 
+        $civimobile_vars['language'] = $GLOBALS['locale'];
+    } else {
+        $civimobile_vars['language'] = 'en_US';
+    }
+
     $civimobile_vars['title']   = 'CiviMobile';
     $civimobile_vars['head']    = drupal_get_html_head();
     $civimobile_vars['favicon'] = theme_get_setting("toggle_favicon") ? "<link rel=\"shortcut icon\" href=\"". theme_get_setting("favicon") ."\" type=\"image/x-icon\"/>\n" : "";

@@ -1,10 +1,9 @@
 <?php require('civimobile.header.php'); ?>
 
-
 <div data-role="page" data-theme="b" id="jqm-contacts"> 
 	<div id="jqm-contactsheader" data-role="header">
         <h3>Search Contacts</h3>
-        	    <a href="/civimobile" data-ajax="false" data-direction="reverse" data-role="button" data-icon="home" data-iconpos="notext" class="ui-btn-right jqm-home">Home</a>
+        <a href="/civimobile" data-ajax="false" data-direction="reverse" data-role="button" data-icon="home" data-iconpos="notext" class="ui-btn-right jqm-home">Home</a>
 
 	</div> 
 	

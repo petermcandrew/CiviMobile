@@ -1,10 +1,7 @@
-
 <?php
     $url = (!empty($_SERVER['HTTPS'])) ? "https://".$_SERVER['SERVER_NAME'].$_SERVER['REQUEST_URI'] : "http://".$_SERVER['SERVER_NAME'].$_SERVER['REQUEST_URI'];
 
-
     $parse_url = parse_url($url, PHP_URL_PATH);
-    
     
     // get last arg of path (contact id)
     $contact_id = end(split('/', $parse_url));
@@ -16,13 +13,13 @@
                             );	
     $contact = $results['values'][0];
     
-   // $contrib_params = array ('version' =>'3', 'contact_id' =>$contact_id};
+    // $contrib_params = array ('version' =>'3', 'contact_id' =>$contact_id};
     $contrib_results=civicrm_api("Contribution","get",
                             array ( 'sequential' =>'1', 
                                     'version'=>3, 
                                     'contact_id' => $contact_id) 
                                     );
-include('civimobile.header.php');
+    include('civimobile.header.php');
 ?>
 <div data-role="page" data-theme="b" id="jqm-contacts">
 
@@ -71,31 +68,31 @@ include('civimobile.header.php');
             
         <div><?php print $contact['group'];?></div>
         <div><?php print $contact['tag'];?></div>
-	</div> 
+    </div> 
 
-<script language="javascript" type="text/javascript">
-			function getLocation() {
+                <script language="javascript" type="text/javascript">
+                function getLocation() {
 				// Get location no more than 10 minutes old. 600000 ms = 10 minutes.
-				navigator.geolocation.getCurrentPosition(showLocation, showError, {enableHighAccuracy:true,maximumAge:600000});
-			}
+                    navigator.geolocation.getCurrentPosition(showLocation, showError, {enableHighAccuracy:true,maximumAge:600000});
+                }
  
-			function showError(error) {
-				alert(error.code + ' ' + error.message);
-			}
+                function showError(error) {
+                    alert(error.code + ' ' + error.message);
+                }
  
-			function showLocation(position) {
-				geoinfo.innerHTML='<p>Latitude: ' + position.coords.latitude + '</p>' 
-				+ '<p>Longitude: ' + position.coords.longitude + '</p>' 
-				+ '<p>Accuracy: ' + position.coords.accuracy + '</p>' 
-				+ '<p>Altitude: ' + position.coords.altitude + '</p>' 
-				+ '<p>Altitude accuracy: ' + position.coords.altitudeAccuracy + '</p>' 
-				+ '<p>Speed: ' + position.coords.speed + '</p>' 
-				+ '<p>Heading: ' + position.coords.heading + '</p>';
-			}
+                function showLocation(position) {
+                    geoinfo.innerHTML='<p>Latitude: ' + position.coords.latitude + '</p>' 
+                        + '<p>Longitude: ' + position.coords.longitude + '</p>' 
+                        + '<p>Accuracy: ' + position.coords.accuracy + '</p>' 
+                        + '<p>Altitude: ' + position.coords.altitude + '</p>' 
+                        + '<p>Altitude accuracy: ' + position.coords.altitudeAccuracy + '</p>' 
+                        + '<p>Speed: ' + position.coords.speed + '</p>' 
+                        + '<p>Heading: ' + position.coords.heading + '</p>';
+                }
         
-		</script>
+                </script>
 
-
+<>
 </div> 
 
 <?php require('civimobile.footer.php'); ?>
