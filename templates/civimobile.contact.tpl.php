@@ -63,7 +63,6 @@
     <span class="postal-code"><?php print $contact['postal_code'];?></span>
     <div class="country-name"><?php print $contact['country'];?></div>
   </div>
-
 </div>    
             
         <div><?php print $contact['group'];?></div>
@@ -91,8 +90,6 @@
                 }
         
                 </script>
-
-<>
 </div> 
 
 <?php require('civimobile.footer.php'); ?>
