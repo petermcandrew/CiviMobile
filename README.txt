@@ -2,8 +2,11 @@ CiviMobile
 
 Project Members:
 
-Kyle Jaster - rayogram.com
-Xavier Dutoit - techtothepeople.com
+Kyle Jaster    - rayogram.com
+Xavier Dutoit  - techtothepeople.com
+Peter McAndrew - thirdsectordesign.org
+Donald Lobo    - civicrm.org
+Kurund Jalmi   - civicrm.org
 
 Purpose:
 
@@ -16,19 +19,6 @@ Tentative feature scope of version 1 - kerouac: to be released for CiviCON
 - being able to log a meeting (activity)
 - being able to add a contact (name, organisation, email, phone)
 
-DEV & Git
-We are using a submodule for jquery-mobile (the 1. branch, beta1 as I'm writing it)
-so beside the usual
-$git clone
-you'll need 
-$git submodule init
-
-and beside
-$git pull
-you need to run
-$git submodule updatee
-
-Warning: It seems that jquery-1.5.min.js is missing from the repo (on my TODO)
 
 TODO:
 
