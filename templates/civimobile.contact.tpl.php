@@ -23,7 +23,7 @@
 ?>
 <div data-role="page" data-theme="c" id="jqm-contacts">
 
- <div data-role="header" data-theme="c">
+ <div data-role="header" data-theme="a">
     <h3><?php print $contact['display_name'];?></h3>
     	    <a href="/civimobile" data-ajax="false" data-direction="reverse" data-role="button" data-icon="home" data-iconpos="notext" class="ui-btn-right jqm-home">Home</a>
 

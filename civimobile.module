@@ -84,7 +84,7 @@ function _civimobile_home_page() {
   include_once(drupal_get_path('module','civimobile').'/templates/civimobile.home.tpl.php');
   return NULL;
 }
-function _civimobile_events_page(&$arguments) {
+function _civimobile_events_page() {
   $civimobile_page_settings = _civimobile_vars_setup();
   include_once(drupal_get_path('module','civimobile').'/templates/civimobile.events.tpl.php');
   return NULL;
