@@ -9,7 +9,7 @@ if(!(isset($_SERVER['HTTP_X_REQUESTED_WITH']) && strtolower($_SERVER['HTTP_X_REQ
     <?php print $civimobile_page_settings['favicon'] ?>
     <?php print $civimobile_page_settings['styles'] ?>
     <?php print $civimobile_page_settings['scripts'] ?>
-
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="<?php print $civimobile_page_settings['civimobile_assets']; ?>/libraries/jquery.mobile-1.0/jquery.mobile-1.0.min.css" />
     <script src="<?php print  $civimobile_page_settings['civimobile_assets']; ?>/libraries/jquery.mobile-1.0/jquery-1.7.1.min.js"></script>
     <script src="<?php print  $civimobile_page_settings['civimobile_assets']; ?>/libraries/jquery.mobile-1.0/jquery.mobile-1.0.min.js"></script>
