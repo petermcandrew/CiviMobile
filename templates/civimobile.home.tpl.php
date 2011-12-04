@@ -1,6 +1,6 @@
 <?php require_once('civimobile.header.php'); ?>
 
-<div data-role="page" data-theme="b" id="jqm-home"> 
+<div data-role="page" data-theme="c" id="jqm-home"> 
 	<div id="jqm-homeheader" data-role="header">
 	    <h3><?php print $civimobile_page_settings['title'] ?></h3>
 	</div> 
@@ -41,8 +41,8 @@
         </ul>
     
 	</div>
-	    <div data-role="footer" data-id="global-footer" data-position="fixed" data-theme="a">
-	<div data-role="navbar" data-theme="a">
+	    <div data-role="footer" data-id="global-footer" data-position="fixed" data-theme="c">
+	<div data-role="navbar" data-theme="c">
       <ul>
         <li><a href="/civimobile/contact" data-icon="search" data-ajax="false">Contacts</a></li>
         <li><a href="/civimobile/events" data-icon="grid" data-ajax="false">Events</a></li>

@@ -1,6 +1,6 @@
 <?php require('civimobile.header.php'); ?>
 
-<div data-role="page" data-theme="b" id="jqm-contacts"> 
+<div data-role="page" data-theme="c" id="jqm-contacts"> 
 	<div id="jqm-contactsheader" data-role="header">
         <h3>Search Contacts</h3>
         <a href="/civimobile" data-ajax="false" data-direction="reverse" data-role="button" data-icon="home" data-iconpos="notext" class="ui-btn-right jqm-home">Home</a>
@@ -13,8 +13,8 @@
     </div>
     </div>
     	 
-    <div data-role="footer" data-id="global-footer" data-position="fixed" data-theme="a">
-	<div data-role="navbar" data-theme="a">
+    <div data-role="footer" data-id="global-footer" data-position="fixed" data-theme="c">
+	<div data-role="navbar" data-theme="c">
       <ul>
         <li><a href="/civimobile/contact" class="ui-btn-active" data-ajax="false" data-icon="search">Contacts</a></li>
         <li><a href="/civimobile/events" data-ajax="false" data-icon="grid">Events</a></li>

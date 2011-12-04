@@ -21,9 +21,9 @@
                                     );
     include('civimobile.header.php');
 ?>
-<div data-role="page" data-theme="b" id="jqm-contacts">
+<div data-role="page" data-theme="c" id="jqm-contacts">
 
- <div data-role="header" data-theme="b">
+ <div data-role="header" data-theme="c">
     <h3><?php print $contact['display_name'];?></h3>
     	    <a href="/civimobile" data-ajax="false" data-direction="reverse" data-role="button" data-icon="home" data-iconpos="notext" class="ui-btn-right jqm-home">Home</a>
 
@@ -68,6 +68,11 @@
         <div><?php print $contact['group'];?></div>
         <div><?php print $contact['tag'];?></div>
     </div> 
+
+  <div> 
+          <a href="/civimobile/contact" data-role="button">Back to contact list</a>
+  </div>  
+ 
 
                 <script language="javascript" type="text/javascript">
                 function getLocation() {
