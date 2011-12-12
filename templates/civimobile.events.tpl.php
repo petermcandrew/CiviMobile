@@ -27,14 +27,7 @@ $(function (){
 	
 	<div data-role="content" id="event-content"> 
 	</div>
-	<div data-role="footer" data-id="global-footer" data-position="fixed" data-theme="c">
-	<div data-role="navbar" data-theme="a">
-      <ul>
-        <li><a href="/civimobile/contact" data-ajax="false" data-icon="search">Contacts</a></li>
-        <li><a href="/civimobile/events"  data-ajax="false" data-icon="grid">Events</a></li>
-      </ul>
-    </div><!-- /navbar -->
-    </div><!-- /footer --> 
+	<?php require_once('civimobile.navbar.php'); ?>
 </div> 
 
 <?php require('civimobile.footer.php'); ?>

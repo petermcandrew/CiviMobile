@@ -13,14 +13,8 @@
     </div>
     </div>
     	 
-    <div data-role="footer" data-id="global-footer" data-position="fixed" data-theme="c">
-	<div data-role="navbar" data-theme="a">
-      <ul>
-        <li><a href="/civimobile/contact" data-ajax="false" data-icon="search">Contacts</a></li>
-        <li><a href="/civimobile/events" data-ajax="false" data-icon="grid">Events</a></li>
-      </ul>
-    </div><!-- /navbar -->
-    </div><!-- /footer --> 
+    <?php require_once('civimobile.navbar.php'); ?>
+
     <div style="display:none" id="add_contact">
     <div data-role="fieldcontain">
         <label for="name">First Name</label>
