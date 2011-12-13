@@ -141,23 +141,19 @@
          </div>
         <?php endif; ?>
         
+        <?php if ($activity_results['count'] > 0) :?>
         <div data-role="collapsible" data-collapsed="true">
         <h3>More</h3>
         <p> 
           <ul id="main-events-list" data-role="listview" data-inset="true" >
           <!--<li data-role="list-divider">More</li>-->
-            <?php if ($activity_results['count'] > 0) :?>
             <li role="option" tabindex="-1" data-theme="c" id="event-<?php print $event['id']; ?>" >
                 <a href="<?php print url('civimobile/contact/').$contact_id.'/activities'; ?>">Activities</a>
-            </li>
-            <?php endif; ?>
-            <li role="option" tabindex="-1" data-theme="c" id="event-<?php print $event['id']; ?>" >
-                <a href="#">Notes</a>
             </li>
           </ul>
         </p>  
         </div>
-        
+        <?php endif; ?>        
     </div> 
 
   <div> 
