@@ -66,14 +66,6 @@ function civimobile_menu() {
       'access arguments' => array('access CiviCRM'),
       'type'             => MENU_NORMAL_ITEM,
     );
-
-	$items['civimobile/create/contact'] = array(
-      'title'            => 'Contacts',
-      'page callback'    => '_civimobile_page',
-      'page arguments'   => array('contact_create',2),
-      'access arguments' => array('access CiviCRM'),
-      'type'             => MENU_NORMAL_ITEM,
-    );
     
     $items['civimobile/contribution/%'] = array(
       'title'            => 'Contribution',
