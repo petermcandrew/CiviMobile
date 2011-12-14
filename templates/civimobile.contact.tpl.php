@@ -13,6 +13,8 @@
                             );
     $contact = $results['values'][0];
     
+    // All details are displayed in the Contact View Page
+    // Need to rework to sort out the display, to optimize the page load time 
     $contrib_results = civicrm_api("Contribution","get",
                             array ( 'sequential' =>'1', 
                                     'version'=>3, 
@@ -31,6 +33,22 @@
     $activity_results = civicrm_api("Activity","get",
                             array ( 'sequential' =>'1', 
                                     'version'=>3, 
+                                    'contact_id' => $contact_id) 
+                                    );
+    $relationship_results = civicrm_api("Relationship","get",
+                            array ( 'sequential' =>'1', 
+                                    'version'=>3, 
+                                    'contact_id' => $contact_id) 
+                                    );
+    $note_results = civicrm_api("Note","get",
+                            array ( 'sequential' =>'1', 
+                                    'version'=>3,
+                                    'entity_table' => 'civicrm_contact', 
+                                    'entity_id' => $contact_id) 
+                                    );
+    $case_results = civicrm_api("Case","get",
+                            array ( 'sequential' =>'1', 
+                                    'version'=>3,
                                     'contact_id' => $contact_id) 
                                     );
     include('civimobile.header.php');
@@ -141,15 +159,36 @@
          </div>
         <?php endif; ?>
         
-        <?php if ($activity_results['count'] > 0) :?>
-        <div data-role="collapsible" data-collapsed="true">
+        <?php if ($activity_results['count'] > 0 OR $relationship_results['count'] > 0 OR $note_results['count'] > 0 OR $case_results['count'] > 0) :?>
+        <div data-role="collapsible" data-collapsed="true" data-theme="e">
         <h3>More</h3>
         <p> 
           <ul id="main-events-list" data-role="listview" data-inset="true" >
-          <!--<li data-role="list-divider">More</li>-->
-            <li role="option" tabindex="-1" data-theme="c" id="event-<?php print $event['id']; ?>" >
+            
+            <?php if ($activity_results['count'] > 0) :?>
+            <li role="option" tabindex="-1" data-theme="c" id="activities-<?php print $contact_id; ?>" >
                 <a href="<?php print url('civimobile/contact/').$contact_id.'/activities'; ?>">Activities</a>
             </li>
+            <?php endif; ?>
+            
+            <?php if ($relationship_results['count'] > 0) :?>
+            <li role="option" tabindex="-1" data-theme="c" id="relationships-<?php print $contact_id; ?>" >
+                <a href="<?php print url('civimobile/contact/').$contact_id.'/relationships'; ?>">Relationships</a>
+            </li>
+            <?php endif; ?>
+            
+            <?php if ($note_results['count'] > 0) :?>
+            <li role="option" tabindex="-1" data-theme="c" id="notes-<?php print $contact_id; ?>" >
+                <a href="<?php print url('civimobile/contact/').$contact_id.'/notes'; ?>">Notes</a>
+            </li>
+            <?php endif; ?>
+            
+            <?php if ($case_results['count'] > 0) :?>
+            <li role="option" tabindex="-1" data-theme="c" id="cases-<?php print $contact_id; ?>" >
+                <a href="<?php print url('civimobile/contact/').$contact_id.'/cases'; ?>">Cases</a>
+            </li>
+            <?php endif; ?>
+            
           </ul>
         </p>  
         </div>
