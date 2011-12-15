@@ -1,4 +1,4 @@
-<?php
+	<?php
     $url = (!empty($_SERVER['HTTPS'])) ? "https://".$_SERVER['SERVER_NAME'].$_SERVER['REQUEST_URI'] : "http://".$_SERVER['SERVER_NAME'].$_SERVER['REQUEST_URI'];
 
     $parse_url = parse_url($url, PHP_URL_PATH);
