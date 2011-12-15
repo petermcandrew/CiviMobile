@@ -124,7 +124,9 @@ function _civimobile_page($page,$param= null ) {
   $additional_args = func_get_args();
   // FIXME: Dirty hack to add the additional params to the get path
   // ISSUE: menu item 'civimobile/contact/%' was picked up instead of 'civimobile/contact/%/activities' 
-  if ($additional_args[2]) $page .= '.'.$additional_args[2];  
+  if (array_key_exists(2, $additional_args)) {
+    if ($additional_args[2]) $page .= '.'.$additional_args[2];
+  }  
   $pagepath = drupal_get_path('module','civimobile')."/templates/civimobile.$page.tpl.php";
   include_once($pagepath);
   return NULL;
