@@ -91,21 +91,30 @@ function civimobile_menu() {
       'type'             => MENU_NORMAL_ITEM,
     );
     
-    $items['civimobile/contact/%/activities'] = array(
-      'title'            => 'Activities',
-      'page callback'    => '_civimobile_page',
-      'page arguments'   => array('contact.activities',2),
-      'access arguments' => array('access CiviCRM'),
-      'type'             => MENU_NORMAL_ITEM,
-    );
-  
     $items['civimobile/activity/%'] = array(
-      'title'            => 'Activyt',
+      'title'            => 'Activity',
       'page callback'    => '_civimobile_page',
       'page arguments'   => array('activity',2),
       'access arguments' => array('access CiviCRM'),
       'type'             => MENU_NORMAL_ITEM,
-    );    
+    );
+        
+    $items['civimobile/relationship/%'] = array(
+      'title'            => 'Relationship',
+      'page callback'    => '_civimobile_page',
+      'page arguments'   => array('relationship',2),
+      'access arguments' => array('access CiviCRM'),
+      'type'             => MENU_NORMAL_ITEM,
+    );
+    
+    $items['civimobile/case/%'] = array(
+      'title'            => 'Case',
+      'page callback'    => '_civimobile_page',
+      'page arguments'   => array('case',2),
+      'access arguments' => array('access CiviCRM'),
+      'type'             => MENU_NORMAL_ITEM,
+    );
+    
   
   return $items;
 }
